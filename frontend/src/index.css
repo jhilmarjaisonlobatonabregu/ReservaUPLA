@@ -1,0 +1,199 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter Variable", "Inter", system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --bg-canvas: #f1f5f9;
+  --bg-surface: #ffffff;
+  --bg-surface-muted: #f8fafc;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --border-primary: #e2e8f0;
+  --accent-primary: #1e3a8a;
+}
+
+html.dark {
+  --bg-canvas: #0f172a;
+  --bg-surface: #1e293b;
+  --bg-surface-muted: #0f172a;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --border-primary: #334155;
+  --accent-primary: #3b82f6;
+  color-scheme: dark;
+}
+
+@layer base {
+  html,
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 150ms ease, color 150ms ease;
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.scroll-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+html.dark .scroll-thin {
+  scrollbar-color: #475569 transparent;
+}
+
+.scroll-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scroll-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-thin::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 9999px;
+}
+
+html.dark .scroll-thin::-webkit-scrollbar-thumb {
+  background-color: #475569;
+}
+
+/* Adaptación semántica global de superficies y tipografías para Modo Oscuro (#0F172A / #1E293B / #F8FAFC / #3B82F6) */
+html.dark .bg-\[\#F1F5F9\] {
+  background-color: #0f172a !important;
+}
+
+html.dark .bg-white {
+  background-color: #1e293b !important;
+}
+
+html.dark .bg-slate-50,
+html.dark .bg-slate-50\/80,
+html.dark .bg-slate-50\/90 {
+  background-color: #0f172a !important;
+}
+
+html.dark .bg-slate-100 {
+  background-color: #334155 !important;
+}
+
+html.dark .text-slate-900,
+html.dark .text-slate-800 {
+  color: #f8fafc !important;
+}
+
+html.dark .text-slate-700,
+html.dark .text-slate-600 {
+  color: #cbd5e1 !important;
+}
+
+html.dark .text-slate-500,
+html.dark .text-slate-400 {
+  color: #94a3b8 !important;
+}
+
+html.dark .text-\[\#1E3A8A\],
+html.dark .text-blue-800,
+html.dark .text-blue-700 {
+  color: #60a5fa !important;
+}
+
+html.dark .border-slate-200,
+html.dark .border-slate-200\/90,
+html.dark .border-slate-200\/80,
+html.dark .border-slate-300,
+html.dark .border-slate-300\/90,
+html.dark .border-slate-100 {
+  border-color: #334155 !important;
+}
+
+html.dark .divide-slate-200\/80 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #334155 !important;
+}
+
+/* Badges e indicadores semánticos con alto contraste WCAG AA/AAA en Modo Oscuro */
+html.dark .bg-blue-50,
+html.dark .bg-blue-50\/70,
+html.dark .bg-blue-50\/90 {
+  background-color: rgba(59, 130, 246, 0.16) !important;
+  color: #93c5fd !important;
+  border-color: rgba(59, 130, 246, 0.35) !important;
+}
+
+html.dark .bg-emerald-50,
+html.dark .bg-emerald-50\/90 {
+  background-color: rgba(16, 185, 129, 0.16) !important;
+  color: #6ee7b7 !important;
+  border-color: rgba(16, 185, 129, 0.35) !important;
+}
+
+html.dark .bg-amber-50,
+html.dark .bg-amber-50\/90 {
+  background-color: rgba(245, 158, 11, 0.16) !important;
+  color: #fcd34d !important;
+  border-color: rgba(245, 158, 11, 0.35) !important;
+}
+
+html.dark .bg-rose-50,
+html.dark .bg-rose-50\/40,
+html.dark .bg-rose-50\/90,
+html.dark .bg-red-50 {
+  background-color: rgba(244, 63, 94, 0.16) !important;
+  color: #fda4af !important;
+  border-color: rgba(244, 63, 94, 0.35) !important;
+}
+
+html.dark .bg-indigo-50 {
+  background-color: rgba(99, 102, 241, 0.16) !important;
+  color: #a5b4fc !important;
+  border-color: rgba(99, 102, 241, 0.35) !important;
+}
+
+html.dark .text-emerald-800,
+html.dark .text-emerald-700,
+html.dark .text-emerald-950 {
+  color: #6ee7b7 !important;
+}
+
+html.dark .text-amber-800,
+html.dark .text-amber-700,
+html.dark .text-amber-950 {
+  color: #fcd34d !important;
+}
+
+html.dark .text-red-800,
+html.dark .text-red-700,
+html.dark .text-rose-800,
+html.dark .text-rose-700,
+html.dark .text-rose-950 {
+  color: #fda4af !important;
+}
+
+html.dark .text-indigo-800,
+html.dark .text-indigo-700 {
+  color: #a5b4fc !important;
+}
+
+html.dark .text-blue-900,
+html.dark .text-blue-950 {
+  color: #bfdbfe !important;
+}
