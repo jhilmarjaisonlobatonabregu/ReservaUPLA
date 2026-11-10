@@ -1,0 +1,25 @@
+# .NET / Backend
+bin/
+obj/
+**/bin/
+**/obj/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+appsettings.Development.json
+
+# Frontend / Node
+node_modules/
+dist/
+dist-ssr/
+*.local
+.vite/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
